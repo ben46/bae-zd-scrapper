@@ -22,12 +22,21 @@ function zhidaoSearchPage(keyword, page, callback){
                 var attri = $(this).find('span');
                 attri.each(function(index){
                     if (index == 0) {
-                        tmpObj.good = $(this).text();
-                    }
-                    if (index == 1) {
-                        tmpObj.date = $(this).text();
+                        if ($(this).attr('class').toString() == 'mr-10 em') {
+                            tmpObj.good = $(this).text();
+                        } else {
+                            tmpObj.date = $(this).text();
+                        }
                     };
-                    if (index == 2) {
+
+                    if (index == 1) {
+                        if (attri.length == 3) {
+                            tmpObj.date = $(this).text();
+                        } else {
+                            tmpObj.user = $(this).find('a').text();
+                        }
+                    };
+                    if (index == 2 && attri.length == 3) {
                         tmpObj.user = $(this).find('a').text();
                     };
                     if (attri.length == index + 1) {
