@@ -1,4 +1,16 @@
 {
-    "main": "app.js"
+    "name": "zhidaoScrapper",
+    "main": "app.js",
+    "homepage": "https://github.com/ben46/zhidaoScrapper",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ben46/zhidaoScrapper"
+    },
+    "scripts": {
+        "start": "node app"
+    },
+    "dependencies": {
+        "nodegrass": "*"
+        , "cheerio": "*"
+  }
 }
-

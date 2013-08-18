@@ -1,29 +1,26 @@
-/*
- * BAE Node.js application demo
- */
+var express = require('express')
+, routes = require('./routes')
+, http = require('http')
 
-/* Port which provided by BAE platform */
-var port = process.env.APP_PORT;
+, app = express()
 
-/*
- * Create an HTTP server
- * which is as similar as http://nodejs.org/api/http.html mentioned
- */
-
-var http = require('http');
-
-var server = http.createServer(function(req, res) {
-    res.writeHead(200, {
-        'Content-Type': 'text/html'
-    });
-
-    var body = '<html>' + '<body>' +
-               '<h1>Welcome to Baidu Cloud!</h1>' +
-               '</body>' + '</html>';
-
-    res.end(body);
+app.configure(function(){
+  app.set('port', process.env.PORT || 3000);
 });
 
-server.listen(port);
+routes(app);
 
-/* Enjoy it! */
+http.createServer(app).listen(app.get('port'), function(){
+  console.log("Express server listening on port " + app.get('port'));
+});
+
+
+
+
+
+
+
+
+
+
+
