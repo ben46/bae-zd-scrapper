@@ -1,6 +1,8 @@
 {
     "name": "zhidaoScrapper",
     "main": "app.js",
+    "version": "0.0.1",
+
     "homepage": "https://github.com/ben46/zhidaoScrapper",
     "repository": {
         "type": "git",
